@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Nav from "../components/nav";
 
 const Home = ({ data }) => {
@@ -25,6 +26,9 @@ const Home = ({ data }) => {
             <div className="card">
               <img width="50px" src={country.flag} alt="" />
               <h2>{country.name}</h2>
+              <Link href={`country/${country.alpha2Code}`}>
+                <a>Details</a>
+              </Link>
               <p>NativeName: {country.nativeName}</p>
               <p>Capital: {country.capital}</p>
             </div>
